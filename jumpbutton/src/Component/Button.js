@@ -4,26 +4,18 @@ function changePosition(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-//console.log(moveButton(-100, 100))
+//console.log(changePosition(-100, 100))
 
 class Button extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { position }
+        this.state = { x: 0, y:0 }
     }
-    state = {}
+    //state = {}
     render() {
         return (
             <button style={{ "marginTop": "100px", "marginLeft": "100px" }}
-                onClick={() => {
-                    let position = 0;
-                    if (this.state.position > 0) {
-                        return
-                    }
-                    this.setState({
-                        randomPosition: this.state.randomPosition + randomPosition
-                    })
-                }}>
+                onClick={this.state.changePosition}>
                 click me!
             </button>
         )
