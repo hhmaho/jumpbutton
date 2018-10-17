@@ -9,15 +9,19 @@ function changePosition(min, max) {
 class Button extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { x: 0, y:0 }
+        this.state = { x: changePosition(), y: changePosition() }
     }
-    //state = {}
     render() {
         return (
             <button style={{ "marginTop": "100px", "marginLeft": "100px" }}
-                onClick={this.state.changePosition}>
+                onClick={() => {
+                    this.setState({
+                        x: this.state.x.changePosition(),
+                        y: this.state.y.changePosition()
+                    })
+                }}>
                 click me!
-            </button>
+            </button >
         )
     }
 }
